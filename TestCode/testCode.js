@@ -17,13 +17,12 @@ function addDiv() {
     var toDoTxt = document.getElementById('whatToDo').value;
 
     var str = '';
-    //str += "<input type=" + "checkbox" + " id=" + "checkbox" + trsCnt + "/>";
     str += "<tr>";
-    //str += "<th>(" + trsCnt + ")</th>" + "<td>" + toDoTxt + "</td>";
-    str += "<th><input type=" + "'checkbox'/>"
+    str += "<th><input type=" + "'checkbox' class=" + "colo" + trsCnt + " onClick='chgTxt(this.className)'/>";  //onclick으로 글씨 변경 넣어보자
     str += "</th>" + "<td>" + toDoTxt + "</td>";
     str += "</tr>"
     str += "<button id=" + "colo" + trsCnt + " onclick=" + "delDivById(this.id)" + ">X</button>";
+
     trs.innerHTML = str;
     field.appendChild(trs);
 }
@@ -33,22 +32,12 @@ function delDivById(clicked_id) {
     calledId = clicked_id;
     field.removeChild(document.getElementById(calledId));
 }
-/*
-function delDiv() {
-    var trsCnt = document.getElementsByClassName('colo').length;  //생성된 tr의 개수(이미 tr들이 만들어진 상황이므로 +1을 하지 않는다.)
-   /*
-   for(var i = 1; i < trsCnt + 1; i++) {
-       if(calledId == i) {
-           field.removeChild(document.getElementById(calledId));
-           break;
-       } else {
-           continue;
-       }
-   }
-   
-   //field.removeChild(document.getElementById('colo' + trsCnt));
-   //field.removeChild(document.getElementById(delId));
-   //field.removeChild(document.getElementById(calledId));
-   field.removeChild(document.getElementById(calledId));
+
+var txtClass;
+function chgTxt(checkbox_class) {
+    txtClass = checkbox_class;
+    var trChangeId = txtClass;
+    //var isChecked = document.getElementsByClassName(txtClass).checked;
+    
+    document.getElementById(trChangeId).innerText = "Done";
 }
-*/
