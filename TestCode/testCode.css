@@ -1,0 +1,39 @@
+div.list {
+  width: 800px;
+  background-color: white;
+  border: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+input {
+  border-color: black;
+  height: 25px;
+  width: 400px;
+}
+
+.colo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#inputBtn {
+  position: absolute;
+  width: 60%;
+  height: 40px;
+  background-color: darkgreen;
+  color: black;
+  border: 1px solid black;
+  font-size: 30px;
+  color: white;
+}
