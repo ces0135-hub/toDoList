@@ -330,3 +330,13 @@ html .clear-completed:active {
 .info a:hover {
   text-decoration: underline;
 }
+
+.newDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 25px;
+  height: 40px;
+}
