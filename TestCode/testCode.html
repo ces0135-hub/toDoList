@@ -10,6 +10,7 @@
                 <table>
                     <thead>
                         <tr id="toDoTr">
+                            <!-- 아래 코드에서 style 지정은 css파일에서 하고 link style로 끌어오는게 코드 보기 편함. -->
                             <th><h1>What To Do: </h1></th><td><input style="margin-left: 10px;" type="text" id="whatToDo" class="whatToDo"></td>
                         </tr>
                     </thead>
@@ -19,6 +20,9 @@
                     </tbody>
                 </table>
             </div>
+            <!-- html에서 직접 onclick지정하는 것보단 js파일에서 document.queryselector('#inputBtn').addEventListener('click', function) 형태로 지정하는게 나음.
+                 윗줄에 적힌대로 구현하면 여러가지 이벤트를 쉽게 지정할 수 있고 오류 발생에서도 이점을 가짐. 
+-->
             <button id="inputBtn" onclick="addDiv()">Add</button>
             
             <script src="testCode.js"></script>

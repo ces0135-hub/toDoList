@@ -16,6 +16,17 @@ function addDiv() {
 
     var toDoTxt = document.getElementById('whatToDo').value;  //입력받는 값
 
+    /**
+    아래처럼 HTML 템플릿 만들어서 innerHTML에 넣어주는 것도 좋은데
+    var str = `
+    <tr>
+        <th>
+            <input type='checkbox' id="checkbox_colo${trsCnt}" class="colo" onClick='reTxt(this.id, this.className)'/>
+            
+            이런 방식으로 백틱 + ${} 형태로 포매팅하면 더 읽기도 쉽고 작성도 빠름
+            python f-string 생각하면 쉽게 
+    `
+    */
     var str = '';
     str += "<tr>";
     str += "<th><input type=" + "'checkbox' id=" + "checkbox_colo" + trsCnt + " class=" + "colo" + trsCnt + " onClick='reTxt(this.id, this.className)'/>";  //onclick으로 글씨 변경 넣어보자
