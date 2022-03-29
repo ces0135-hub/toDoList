@@ -37,3 +37,11 @@ input {
   font-size: 30px;
   color: white;
 }
+
+.lineTxt {
+  text-decoration: line-through;
+}
+
+.returnTxt {
+  text-decoration: none;
+}
