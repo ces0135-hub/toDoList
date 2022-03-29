@@ -30,7 +30,7 @@ function addDiv() {
 
     var str = '';  //추가될 to do list의 content
     str += "<input id=" + "listCheckBox" + cntDiv + " onclick=" + "callChangeTxt(this.id)" + " type=" + "'checkbox'/>";  //체크 박스
-    str += "<span id='addedToDoTxt'" + cntDiv + ">" + newToDo + "</span>";  //새로 입력받은 항목
+    str += "<div id='newSpan' class=" + "newSpan" + cntDiv + ">" + newToDo + "</div>";  //새로 입력받은 항목
     str += "<button class=" + "delBtn" + " id=" + "delBtn" + cntDiv + " onclick=" + "delDiv(this.id)" + ">X</button>";  //삭제 버튼
 
     newDiv.innerHTML = str;
@@ -50,13 +50,13 @@ function callChangeTxt(calledId) {
     
     let inputTxt = newToDoList[cnt - 1];
 
-    let isChecked = document.getElementById('listCheckBox' + cnt).checked;//OK
+    let isChecked = document.getElementById('listCheckBox' + cnt).checked;
     let txtToChange = document.getElementById('newDiv' + cnt);
     
     if(isChecked === true) {
         let newStr = '';  //추가될 to do list의 content
         newStr += "<input id=" + "listCheckBox" + cnt + " onclick=" + "callChangeTxt(this.id)" + " type=" + "'checkbox' checked/>";
-        newStr += "<span style=" + "text-decoration: line-through;" + " id='addedToDoTxt'" + cnt + ">Done" + "</span>";
+        newStr += "<span style='text-decoration: line-through;' class=" + "newSpan" + cnt + ">" + inputTxt + "</span>";
         newStr += "<button class=" + "delBtn" + " id=" + "delBtn" + cnt + " onclick=" + "delDiv(this.id)" + ">X</button>";
         txtToChange.innerHTML = newStr
     }
@@ -64,7 +64,9 @@ function callChangeTxt(calledId) {
     if(isChecked === false) {
         let returnStr = '';  //추가될 to do list의 content
         returnStr += "<input id=" + "listCheckBox" + cnt + " onclick=" + "callChangeTxt(this.id)" + " type=" + "'checkbox'/>";
-        returnStr += "<span id='addedToDoTxt'" + cnt + ">" + inputTxt + "</span>";
+        returnStr += "<div>"
+        returnStr += inputTxt;
+        returnStr += "</div>";
         returnStr += "<button class=" + "delBtn" + " id=" + "delBtn" + cnt + " onclick=" + "delDiv(this.id)" + ">X</button>";
         txtToChange.innerHTML = returnStr
     }
